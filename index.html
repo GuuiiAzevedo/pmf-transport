@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <title>PMF Transportadora</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f7f7f7;
+            color: #333;
+        }
+        header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 20px;
+            background-color: #e9dfdf; /* Azul mais suave */
+            color: white;
+        }
+        header img {
+            height: 100px; /* Ajuste o tamanho do logo */
+        }
+        header h1 {
+            font-size: 2.4rem; /* Aumenta o tamanho */
+            font-weight: bold;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: #ecf0f1; /* Cor mais suave */
+        }
+        main {
+            padding: 20px;
+        }
+        .hero {
+            background: 
+                linear-gradient(
+                    rgba(0, 0, 0, 0.5), 
+                    rgba(0, 0, 0, 0.5) 
+                ),
+                url('fotos/ft3.jpg') no-repeat center/cover;
+            color: rgb(255, 255, 255);
+            text-align: center;
+            padding: 60px 20px;
+            border-radius: 10px;
+            margin-bottom: 40px;
+            position: relative;
+        }
+        .hero h2 {
+            font-size: 2rem;
+            margin-bottom: 15px;
+        }
+        .hero p {
+            font-size: 1.2rem;
+            line-height: 1.6;
+        }
+        .whatsapp-btn {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 12px 24px;
+            background-color: #25d366;
+            color: white;
+            font-size: 1.2rem;
+            font-weight: bold;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+            cursor: pointer;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.3s ease;
+        }
+        .whatsapp-btn:hover {
+            background-color: #1ebe5b;
+        }
+        section {
+            margin: 40px 0;
+        }
+        section h2 {
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+            color: #000408;
+            font-weight: bold;
+        }
+        .history {
+            background: 
+                linear-gradient(
+                    rgba(0, 0, 0, 0.1), 
+                    rgba(0, 0, 0, 0.1) 
+                ),
+                url('fotos/ft_antigo.jpg') no-repeat center/cover;
+            color: white;
+            padding: 60px 20px;
+            text-align: center;
+            border-radius: 10px;
+            margin-bottom: 40px;
+        }
+        .goals {
+            background: url('fotos/objt.jpg') no-repeat center/cover;
+            color: white;
+            padding: 60px 20px;
+            text-align: center;
+            border-radius: 10px;
+            margin-bottom: 40px;
+        }
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+        ul li {
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+        }
+        ul li::before {
+            content: '\2713';
+            color: #004aad;
+            margin-right: 10px;
+            font-size: 1.2rem;
+        }
+        .services {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+        .service-card {
+            background: white;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+        }
+        .service-card img {
+            width: 60px;
+            height: 60px;
+            margin-bottom: 15px;
+        }
+        .client-wrapper {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 30px;
+            background-color: white;
+            padding: 30px 0;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .client-logo {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            overflow: hidden;
+            background-color: #f8f9fa;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .client-logo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        footer {
+            background-color: #2C3E50;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            margin-top: 40px;
+        }
+        .floating-whatsapp-btn {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            padding: 12px 24px;
+            background-color: #25d366;
+            color: white;
+            font-size: 1.2rem;
+            font-weight: bold;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.3s ease;
+        }
+        .floating-whatsapp-btn:hover {
+            background-color: #1ebe5b;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="fotos/lg_sf.png" alt="Logo PMF Transportadora">
+        <h1>PMF Transportadora</h1>
+    </header>
+    <main>
+        <div class="hero">
+            <h2>Bem-vindo à PMF Transportadora!</h2>
+            <p>Oferecemos soluções ágeis e seguras para o transporte das suas mercadorias. Entre em contato para solicitar um orçamento personalizado.</p>
+            <a class="whatsapp-btn" href="https://wa.me/SEU_NUMERO_DE_WHATSAPP" target="_blank">Solicitar Orçamento</a>
+        </div>
+
+        <section class="history">
+            <h2> Nossa História</h2>
+            <p>A PMF Transportadora nasceu com o propósito de revolucionar o transporte de mercadorias, oferecendo excelência em cada etapa do processo logístico. Desde a nossa fundação, temos como missão proporcionar segurança, agilidade e um atendimento de qualidade que supera as expectativas dos nossos clientes. Ao longo dos anos, construímos uma trajetória sólida, baseada em compromisso e inovação, sempre com o objetivo de estabelecer parcerias duradouras e confiáveis. Na PMF, o transporte vai além de levar cargas: é garantir que sua confiança e seus negócios cheguem ao destino com a mesma eficiência e cuidado com que foram embarcados.</p>
+        </section>
+
+        <section>
+            <h2>Serviços Prestados</h2>
+            <div class="services">
+                <div class="service-card">
+                    <i class="fas fa-box-open fa-3x"></i>
+                    <h3>Transporte de cargas fracionadas</h3>
+                    <p>Oferecemos soluções ágeis, econômicas e eficazes para o transporte de pequenas cargas. Ideal para empresas que precisam de flexibilidade e segurança.</p>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-truck-loading fa-3x"></i>
+                    <h3>Transporte de cargas completas</h3>
+                    <p>Soluções robustas e dedicadas para atender às necessidades de grandes volumes. Garantimos eficiência e segurança em cada etapa do transporte.</p>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-dolly fa-3x"></i>
+                    <h3>Logística personalizada</h3>
+                    <p>Desenvolvemos estratégias logísticas adaptadas às suas demandas específicas, otimizando custos, prazos e a eficiência do seu negócio.</p>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-warehouse fa-3x"></i>
+                    <h3>Armazenagem e distribuição</h3>
+                    <p>Oferecemos soluções integradas para armazenagem e distribuição, gerenciando sua cadeia logística com excelência.</p>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>Empresas que confiam em nós para transportar suas cargas</h2>
+            <div class="client-wrapper">
+                <div class="client-logo">
+                    <img src="fotos/destro.png" alt="Cliente 1">
+                </div>
+                <div class="client-logo">
+                    <img src="fotos/confort.png" alt="Cliente 2">
+                </div>
+                <div class="client-logo">
+                    <img src="fotos/delta.png" alt="Cliente 3">
+                </div>
+                <div class="client-logo">
+                    <img src="fotos/rio_center.png" alt="Cliente 4">
+                </div>
+                <div class="client-logo">
+                    <img src="fotos/anhembi.png" alt="Cliente 5">
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; <span id="year"></span> PMF Transportadora. Todos os direitos reservados.</p>
+    </footer>
+
+    <button class="floating-whatsapp-btn" onclick="window.open('https://wa.me/SEU_NUMERO_DE_WHATSAPP', '_blank')">WhatsApp</button>
+
+    <script>
+        const year = new Date().getFullYear();
+        document.getElementById('year').textContent = year;
+    </script>
+</body>
+</html>
